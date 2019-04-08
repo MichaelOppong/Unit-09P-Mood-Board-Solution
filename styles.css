@@ -1,5 +1,7 @@
 body {
  text-align:center;   
+ font-family: 'Indie Flower', cursive;
+
 }
 
 img {
@@ -11,4 +13,8 @@ img {
 }
 input{
     width:130px;
+}
+h1{
+    border:5px solid black;
+    
 }
