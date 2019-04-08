@@ -10,25 +10,40 @@ var hungryImages = ["","https://media.tenor.com/images/f85c932039fc7e45c6c1f9465
 
 $('button').click(function(){
     var mood = $('input').val();
-  
+    $(".images").html("");
+    if(mood === "happy"){
+        happyMood();
+    } else if(mood==="hungry"){
+        hungryMood();
+    }else if(mood==="tired"){
+        tiredMood();
+    }else if(mood==="sad"){
+        sadMood();
+    }else{
+     alert("Please enter happy, sad, tired, or hungry!");   
+    }
 });
 
 
 function happyMood(){
     changeBackgroundColor("yellow");
     changeTextColor("orange");
+    displayImages(happyImages);
 }
 function sadMood(){
     changeBackgroundColor("lightblue");
     changeTextColor("purple");
+    displayImages(sadImages);
 }
 function tiredMood(){
     changeBackgroundColor("grey");
     changeTextColor("lightblue");
+    displayImages(tiredImages);
 }
 function hungryMood(){
     changeBackgroundColor("red");
     changeTextColor("yellow");
+    displayImages(hungryImages);
 }
 
 function changeBackgroundColor(color){
@@ -39,5 +54,9 @@ function changeTextColor(color){
     $('body').css('color', color);
 }
 
-
+function displayImages(images){
+    images.forEach(function(image){
+        $('.images').append('<img src ='+ image + '>');
+    });
+}
 
